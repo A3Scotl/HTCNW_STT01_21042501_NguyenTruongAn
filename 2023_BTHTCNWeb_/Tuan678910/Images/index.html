@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div style="height: 400px; overflow: hidden;">
+            <img style="background-size: cover; width: 100%;" src="./website.png" alt>
+        </div>
+        <div style="display: flex; list-style: none; gap: 20px; font-size: 20px; font-weight: bold;">
+            <li>Trang chủ</li>
+            <li style="cursor: pointer;" id="open-modal">Đăng kí</li>
+        </div>
+        <h2 style="width: 100%; text-align:center;">LIST OF MEMBERS</h2>
+        <table style="width:100%">
+            <thead style="font-weight: bold;">
+                <td>STT</td>
+                <td>Họ và tên</td>
+                <td>Giới tính</td>
+                <td>Số điện thoại</td>
+                <td>Ngày sinh</td>
+                <td>Địa chỉ</td>
+                <td>Khóa học</td>
+                <td>Học phí</td>
+            </thead>
+            <!-- <tr>
+                    <td>ssss</td>
+                    <td>ssss</td>
+                    <td>ssss</td>
+                    <td>ssss</td>
+                </tr> -->
+        </table>
+
+    </div>
+    <div class="modal" id="modal" style="display: none;">
+        <h2 style="margin: 20px 0;">PHIEU NHAP THONG TIN</h2>
+        <div>
+            <label for>
+                <b>Họ và tên</b>
+            </label>
+            <input type="text" id="ten">
+            <span class="err-ten">*</span>
+        </div>
+        <div>
+            <label for>
+                <b>SDT</b>
+            </label>
+            <input type="text" id="sdt">
+            <span class="err-sdt">*</span>
+
+        </div>
+        <div>
+            <label for>
+                <b>Ngay sinh</b>
+            </label>
+            <input type="date" id="date">
+            <span class="err-date">*</span>
+
+        </div>
+        <div>
+            <label for>
+                <b>Dia chi</b>
+            </label>
+            <input type="text" id="diachi">
+            <span class="err-diachi">*</span>
+
+        </div>
+        <div>
+            <label for="gioiTinh">
+                <b>Gioi tinh</b>
+            </label>
+
+            <input type="radio" id="rNam" name="gioiTinh" value="Nam" checked>Nam
+            <input type="radio" id="rNu" name="gioiTinh" value="Nu">Nu
+
+        </div>
+        <div>
+            <label for>
+                <b>Khoa hoc</b>
+            </label>
+            <select id="khoahoc" onchange="changeHocPhi() ">
+                <option value="2 tuan">2 tuan</option>
+                <option value="4 tuan">4 tuan</option>
+                <option value="6 tuan">6 tuan</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <b>Hoc phi</b>
+            </label>
+            <input type="text" readonly id="hocphi" value="20000">
+        </div>
+        <button id="submit">submit</button>
+        <button id="close">close</button>
+    </div>
+</body>
+<script>
+    const open = document.querySelector("#open-modal");
+    const close = document.querySelector("#close");
+    const modal = document.querySelector("#modal");
+    const submit = document.querySelector("#submit");
+    const khoaHoc = document.getElementById("khoahoc");
+    const hocphiElement = document.getElementById("hocphi");
+    const erTen = document.querySelector(".err-ten");
+    const erSdt = document.querySelector(".err-sdt");
+    const erDiachi = document.querySelector(".err-diachi");
+    const erDate = document.querySelector(".err-date");
+
+
+
+    const nam = document.getElementById("rNam");
+    const nu = document.getElementById("rNu");
+    var stt = 0;
+    var gt = "";
+    var tien = "";
+    var table = document.querySelector("table");
+    function changeHocPhi() {
+        if (khoaHoc != "") {
+            switch (khoaHoc.value) {
+                case "2 tuan":
+                    tien = "20000";
+                    break;
+                case "4 tuan":
+                    tien = "40000";
+                    break;
+                case "6 tuan":
+                    tien = "60000";
+                    break;
+                default:
+                    tien = "0"
+            }
+            hocphi.value = tien;
+        } else {
+            alert("Vui long chon khoa hoc!!")
+        }
+    }
+
+    //open modal
+    open.addEventListener("click", function () {
+        modal.style.display = "block";
+    });
+    //close modal
+    close.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+    //khi click submit
+    submit.addEventListener("click", function (e) {
+        e.preventDefault()
+        const ten = document.getElementById("ten").value;
+        const ngay = document.getElementById("date").value;
+        const sdt = document.getElementById("sdt").value;
+        const diachi = document.getElementById("diachi").value;
+
+        // ẩn span
+        function hideElement(element) {
+            element.innerHTML = "";
+            element.classList.add("none");
+        }
+        //show span
+        function showElement(element, message) {
+            element.innerHTML = message;
+            element.classList.remove("none");
+        }
+
+        if (ten === "") {
+            showElement(erTen, "Vui long nhap ten");
+        } else if (ten.length < 5) {
+            showElement(erTen, "Ten phai co it nhat 5 ky tu");
+        } else {
+            hideElement(erTen);
+        }
+
+        if (sdt === "") {
+            showElement(erSdt, "Vui long nhap sdt");
+        } else if (sdt.length < 10) {
+            showElement(erSdt, "Sdt phai co it nhat 10 so");
+        } else if (!/^\d+$/.test(sdt)) {
+            showElement(erSdt, "Sdt phai la so");
+        } else {
+            hideElement(erSdt);
+        }
+
+        if (ngay === "") {
+            showElement(erDate, "Vui long chon ngay sinh");
+        } else {
+            hideElement(erDate);
+        }
+
+        if (diachi === "") {
+            showElement(erDiachi, "Vui long nhap dia chi");
+        } else if (diachi.length < 10) {
+            showElement(erDiachi, "Dia chi phai co it nhat 10 ky tu");
+            return false;
+        } else {
+            hideElement(erDiachi);
+        }
+        if (nam.checked) {
+            gt = "Nam";
+        } else {
+            gt = "Nu";
+        }
+        if (khoaHoc.value === "") {
+            alert("Vui long chon khoa hoc");
+        }
+        if (ten !== "" 
+            && sdt !== "" 
+            && ngay !== "" 
+            && diachi !== "" 
+            && khoaHoc.value !== "") {
+            stt++
+            let html = `
+        <tr>
+            <td>${stt}</td>
+            <td>${ten}</td>
+            <td>${gt}</td>
+            <td>${sdt}</td>
+            <td>${ngay}</td>
+            <td>${diachi}</td>
+            <td>${khoaHoc.value}</td>
+            <td>${hocphi.value}</td>
+        </tr>`;
+            console.log(ten)
+            let row = table.insertRow();
+            row.innerHTML = html;
+            modal.style.display = "none";
+        }
+    })
+
+</script>
+
+</html>
