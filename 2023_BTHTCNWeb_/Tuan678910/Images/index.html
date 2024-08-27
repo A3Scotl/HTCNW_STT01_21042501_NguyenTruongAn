@@ -42,7 +42,10 @@
 
     </div>
     <div class="modal" id="modal" style="display: none;">
-        <h2 style="margin: 20px 0;">PHIEU NHAP THONG TIN</h2>
+        <div>
+            <h2 style="margin: 20px 0;">PHIẾU NHẬP THÔNG TIN</h2>
+            
+        </div>
         <div>
             <label for>
                 <b>Họ và tên</b>
@@ -52,7 +55,7 @@
         </div>
         <div>
             <label for>
-                <b>SDT</b>
+                <b>Số điện thoại</b>
             </label>
             <input type="text" id="sdt">
             <span class="err-sdt">*</span>
@@ -60,7 +63,7 @@
         </div>
         <div>
             <label for>
-                <b>Ngay sinh</b>
+                <b>Ngày sinh</b>
             </label>
             <input type="date" id="date">
             <span class="err-date">*</span>
@@ -68,7 +71,7 @@
         </div>
         <div>
             <label for>
-                <b>Dia chi</b>
+                <b>Địa chỉ</b>
             </label>
             <input type="text" id="diachi">
             <span class="err-diachi">*</span>
@@ -76,7 +79,7 @@
         </div>
         <div>
             <label for="gioiTinh">
-                <b>Gioi tinh</b>
+                <b>Giới tính</b>
             </label>
 
             <input type="radio" id="rNam" name="gioiTinh" value="Nam" checked>Nam
@@ -85,22 +88,22 @@
         </div>
         <div>
             <label for>
-                <b>Khoa hoc</b>
+                <b>Khoá học</b>
             </label>
             <select id="khoahoc" onchange="changeHocPhi() ">
-                <option value="2 tuan">2 tuan</option>
-                <option value="4 tuan">4 tuan</option>
-                <option value="6 tuan">6 tuan</option>
+                <option value="2 tuần">2 tuần</option>
+                <option value="4 tuần">4 tuần</option>
+                <option value="6 tuần">6 tuần</option>
             </select>
         </div>
         <div>
             <label>
-                <b>Hoc phi</b>
+                <b>Học phí</b>
             </label>
             <input type="text" readonly id="hocphi" value="20000">
         </div>
-        <button id="submit">submit</button>
-        <button id="close">close</button>
+        <button id="submit" style="background-color: rgb(59, 176, 9);">Lưu</button>
+       
     </div>
 </body>
 <script>
@@ -126,13 +129,13 @@
     function changeHocPhi() {
         if (khoaHoc != "") {
             switch (khoaHoc.value) {
-                case "2 tuan":
+                case "2 tuần":
                     tien = "20000";
                     break;
-                case "4 tuan":
+                case "4 tuần":
                     tien = "40000";
                     break;
-                case "6 tuan":
+                case "6 tuần":
                     tien = "60000";
                     break;
                 default:
@@ -140,7 +143,7 @@
             }
             hocphi.value = tien;
         } else {
-            alert("Vui long chon khoa hoc!!")
+            alert("Vui lòng lựa chọn khóa học!!")
         }
     }
 
@@ -172,33 +175,33 @@
         }
 
         if (ten === "") {
-            showElement(erTen, "Vui long nhap ten");
+            showElement(erTen, "Vui lòng nhập tên!!");
         } else if (ten.length < 5) {
-            showElement(erTen, "Ten phai co it nhat 5 ky tu");
+            showElement(erTen, "Tên phải có ít nhất 5 ký tự!!");
         } else {
             hideElement(erTen);
         }
 
         if (sdt === "") {
-            showElement(erSdt, "Vui long nhap sdt");
+            showElement(erSdt, "Vui lòng nhập số điện thoại!!");
         } else if (sdt.length < 10) {
-            showElement(erSdt, "Sdt phai co it nhat 10 so");
+            showElement(erSdt, "Số điện thoại phải có ít nhất 10 số!!");
         } else if (!/^\d+$/.test(sdt)) {
-            showElement(erSdt, "Sdt phai la so");
+            showElement(erSdt, "Số điện thoại sai định dạng!!");
         } else {
             hideElement(erSdt);
         }
 
         if (ngay === "") {
-            showElement(erDate, "Vui long chon ngay sinh");
+            showElement(erDate, "Vui lòng điền ngày sinh!!");
         } else {
             hideElement(erDate);
         }
 
         if (diachi === "") {
-            showElement(erDiachi, "Vui long nhap dia chi");
+            showElement(erDiachi, "Vui lòng nhập địa chỉ!!");
         } else if (diachi.length < 10) {
-            showElement(erDiachi, "Dia chi phai co it nhat 10 ky tu");
+            showElement(erDiachi, "Địa chỉ phải nhiều hơn 10 ký tự !!");
             return false;
         } else {
             hideElement(erDiachi);
@@ -209,7 +212,7 @@
             gt = "Nu";
         }
         if (khoaHoc.value === "") {
-            alert("Vui long chon khoa hoc");
+            alert("Vui lòng chọn khóa học!!");
         }
         if (ten !== "" 
             && sdt !== "" 
