@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            display: flex;
+            height: 100px;
+            width: 100%;
+            background-color: #294e79;
+            color: white;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        
+        .header input {
+            background-color: #294e79;
+            color: white;
+            border: 1px solid black;
+            padding: 3px;
+        }
+        
+        .search {
+            display: flex;
+            justify-content: end;
+        }
+        
+        .link {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-direction: column;
+        }
+        
+        .link-link {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .header li {
+            background-color: #5087c7;
+            padding: 5px 20px;
+            font-weight: bold;
+        }
+        
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 60px;
+        }
+        
+        .content {
+            height: 90vh;
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+        }
+        
+        .content .right {
+            background-color: rgb(192, 189, 189);
+            height: fit-content;
+            width: fit-content;
+            padding: 30px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content .right p {
+            width: 300px;
+            padding: 10px;
+            text-align: justify;
+        }
+        
+        .footer {
+            background-color: #294e79;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./flower.png" alt="">
+            <span>
+                <h1>FlowerBox 360</h1>
+                <h5>...to get your daily dose of luxury roses!</h5>
+            </span>
+        </div>
+        <div class="link">
+            <div class="search">
+                <input type="text" placeholder="Search the site..">
+                <input type="submit" value="GO">
+            </div>
+            <div class="link-link">
+                <li>Home</li>
+                <li>Promotion</li>
+                <li>Gift Baskets</li>
+                <li>Flower Services</li>
+                <li>About</li>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <h1>Why Not Contact Us Today!</h1>
+            <hr>
+            <p style="color: red; text-shadow: 1px 5px green;">For FlowerBox 360 shopers, that means not only can you send your friends and loves ones the highest quality flowers found on online, but thatt you can do so at a great value. FlowerBox 360 Info!</p>
+            <form action=""></form>
+        </div>
+        <div class="right">
+            <h1>Discount & Specials</h1>
+            <hr style="width: 80%;">
+            <img src="./rose.png" alt="" style="width: 300px; padding: 10px;">
+            <p>
+                FlowerBox 360 offers many great discounts throught the year, from coupons and coupon codes, to promo codes and other savings. We also offer military flower discounts to our wonderfull troppps! Read more
+            </p>
+            <p style="color: #294e79; width: 100%; text-align: end;"><b>Read More >></b></p>
+        </div>
+
+    </div>
+    <div class="footer">
+        <span> Copyright@ 2017 - All Rights Reserved -
+        </span>
+        <span style="color: grey;">Software Engineering Department - Industrial University of Ho Chi Minh City</span>
+    </div>
+</body>
+
+</html>
