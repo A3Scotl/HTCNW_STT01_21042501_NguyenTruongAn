@@ -75,10 +75,11 @@
         }
         
         .content .right {
-            background-color: rgb(192, 189, 189);
+            background-color: rgb(239, 237, 237);
             height: fit-content;
             width: fit-content;
-            padding: 30px;
+           
+            padding: 50px 30px;
             width: 400px;
             display: flex;
             flex-direction: column;
@@ -95,6 +96,16 @@
         .footer {
             background-color: #294e79;
             padding: 5px;
+        }
+        .left__from-inout input{
+            width: 300px;
+            font-size: 18px;
+        }
+        .left__from-inout{
+            display: flex; gap: 20px;
+        }
+        .left__from-inout button{
+            padding: 5px 20px;
         }
     </style>
 </head>
@@ -125,10 +136,64 @@
 
     <div class="content">
         <div class="left">
-            <h1>Why Not Contact Us Today!</h1>
+            <h2 style="padding:10px">Why Not Contact Us Today!</h2>
             <hr>
-            <p style="color: red; text-shadow: 1px 5px green;">For FlowerBox 360 shopers, that means not only can you send your friends and loves ones the highest quality flowers found on online, but thatt you can do so at a great value. FlowerBox 360 Info!</p>
-            <form action=""></form>
+           <div style="display: flex; gap: 80px;">
+            <div class="left__form" style="display: flex;flex-direction: column; row-gap:10px ;width: 60%;">
+                <p style="color: red; text-shadow: 1px 5px green;display: inline-block; margin: 10px 0; text-align: justify;">For FlowerBox 360 shopers, that means not only can you send your friends and loves ones the highest quality flowers found on online, but thatt you can do so at a great value. FlowerBox 360 Info!</p>
+                <div class="left__from-inout" >
+                    <div >
+                        <div>Name:</div>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <div>Email:</div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="left__from-inout">
+                    <div>
+                        <div>Telephone:</div>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <div>Subject:</div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="">
+                    <div>Message:</div>
+                    <textarea name="" id="" rows="5" style="width: 100%;"></textarea>
+                </div>
+                <div class="left__from-inout">
+                    <button>Submit</button>
+                    <button>Reset</button>
+                </div>
+            </div>
+            <div class="left__form-content" style="width: 50%; font-size: 18px;">
+                <h2 style=" margin: 10px 0;">FlowerBox 350 Info!</h2>
+                <p>---------------------------------------</p>
+                <div style="padding: 20px 0;">Operating Hours: <br>
+                Monday-Friday: 9.00am-5.00pm. <br>
+                Satuday: 9.00am-1.00pm. <br>
+                Sunday: Closed (no Deliveries) <br>
+                ORDER ONLINE 24/7
+                </div>
+                <div style="padding: 20px 0;">
+                    Software Engineering Dept <br>
+                    Infomation Technology Falcuty <br>
+                    First Floor, H.Building
+                </div>
+                <div style="padding: 20px 0;">
+                    12 Nguyen Van Bao St,.Ward 4 <br>
+                    Go Vao DisTrict <br>
+                    Ho Chi Minh City <br>
+                    Tel : 0238 8940 390 <br>
+                    Fax : 0283.9940 954
+                </div>
+
+            </div>
+           </div>
         </div>
         <div class="right">
             <h1>Discount & Specials</h1>

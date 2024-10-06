@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, rgb(110 200 239), rgb(99, 179, 214));
+            color: white;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 30px 20px;
+        }
+
+        .header__menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header__menu a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header__logo {
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 10px 2px 10px rgb(0, 0, 87);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 40% 50%;
+            gap: 100px;
+            padding: 20px 10px;
+        }
+
+        .content p {
+            text-align: justify;
+        }
+
+        .content__left {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .content__left .form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            width: 100%;
+            padding-left: 60px;
+            padding-top: 20px;
+        }
+
+        .form__row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .form__row input,
+        textarea {
+            width: 400px;
+        }
+
+        label {
+            width: 200px;
+        }
+
+        .content__right img {
+            width: 80%;
+        }
+
+        .content__right h1 {
+            color: blue;
+            text-shadow: 5px 5px blue;
+            padding-left: 70px;
+        }
+
+        h3 {
+            color: blue;
+            text-transform: inherit;
+            padding-left: 80px;
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__menu">
+            <a href="">Home</a>
+            <a href="">Products</a>
+            <a href="">Services</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="header__logo">Sky World</div>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="content__left">
+            <h1>Registration information</h1>
+            <p>Registration Information
+                Start your travel planning now with our on-line tour regstration
+                form. Just tell us a little about yourself and your group and one of our travel
+                experts will contact you to create the perfect custom built for your group's needs .</p>
+            <div class="form">
+                <div class="form__row">
+                    <label for="" style="width: 170px;">Title</label>
+                    <select name="" id="">
+                        <option value="">Mr</option>
+                    </select>
+                </div>
+                <div class="form__row">
+                    <label for="">Fulname *</label>
+                    <input type="text" placeholder="Fisrt Name">
+                </div>
+                <div class="form__row">
+                    <label for="Title">Mailing Address</label>
+                    <input type="text" placeholder="Mailing Address">
+                </div>
+                <div class="form__row">
+                    <label for="Title">City</label>
+                    <input type="text" placeholder="City">
+                </div>
+                <div class="form__row">
+                    <label for="Title">Country</label>
+                    <input type="text" placeholder="Country">
+                </div>
+                <div class="form__row">
+                    <label for="Title">Specific question or <br>
+                        requests about your tour
+                    </label>
+                    <textarea name="" id="" rows="5"
+                        placeholder="Specific question or requests about your tour"></textarea>
+                </div>
+                <div class="form__row">
+                    <label for="" style="width: 170px;"></label>
+                    <div><button>Submit</button>
+                        <button>Reset</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="content__right">
+            <img src="./sky.png" alt="">
+            <div>
+                <h1>You have arrived</h1>
+                <h3>Journeys as great as the destinations</h3>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <h4>2016 Sky World Tours. All rights reserved.</h4>
+        <p>
+            
+    Contact information: Student Name | StudentID | Testing Date 
+
+        </p>
+    </div>
+</body>
+
+</html>
